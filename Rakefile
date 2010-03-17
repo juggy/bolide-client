@@ -13,7 +13,7 @@ begin
     s.version = "0.0.1"
     s.author = "Julien Guimont"
     s.email = "julien.guimont@gmail.com"
-    s.homepage = "http://github/juggy"
+    s.homepage = "http://github.com/juggy/bolide-client"
     s.platform = Gem::Platform::RUBY
     s.summary = "Ruby client for Bolide API"
     s.files = FileList["{bin,lib}/**/*"].to_a
