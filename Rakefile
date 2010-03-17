@@ -10,7 +10,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "bolide_client"
-    s.version = "0.0.1"
+    s.version = "0.0.3"
     s.author = "Julien Guimont"
     s.email = "julien.guimont@gmail.com"
     s.homepage = "http://github.com/juggy/bolide-client"
@@ -30,7 +30,7 @@ end
 
 spec = Gem::Specification.new do |s| 
   s.name = "bolide_client"
-  s.version = "0.0.1"
+  s.version = "0.0.3"
   s.author = "Julien Guimont"
   s.email = "julien.guimont@gmail.com"
   s.homepage = "http://github/juggy"

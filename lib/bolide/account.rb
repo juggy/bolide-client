@@ -5,7 +5,7 @@ require 'digest/md5'
 module Bolide
 
   class Account 
-    attr_accessor :session
+    attr_accessor :session, :account
   
     def initialize(account, api_key, url = 'http://live.bolideapp.com')
       @account = account
