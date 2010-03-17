@@ -22,6 +22,7 @@ module Bolide
     
       msg = create_msg(body, qs)
       resp = session.post('/msg.xml', msg, headers)
+      p resp.body
       if resp.status > 400
         xml = Nokogiri::XML(resp.body)
 
