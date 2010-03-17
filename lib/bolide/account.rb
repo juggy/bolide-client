@@ -1,3 +1,7 @@
+require 'patron'
+require 'nokogiri'
+require 'digest/md5'
+
 module Bolide
 
   class Account 

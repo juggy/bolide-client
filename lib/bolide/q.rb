@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 module Bolide
 
   class Q
