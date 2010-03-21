@@ -59,10 +59,13 @@ module Bolide
     def read_error(resp)
       xml = Nokogiri::XML(resp.body)
 
-      @error = xml.at_css('error').content
+      @error = xml.at_css('error')
       if(@error)
-        p @error
-        @error
+        p @error.content
+        @error.content
+      else
+        p resp.body
+        resp.body
       end
     end
   
@@ -70,9 +73,12 @@ module Bolide
       #parse xml
       xml = Nokogiri::XML(resp.body)
       
-      @token = xml.at_css('q token').content
-      @expire_on = xml.at_css('q expire_on').content
-      @msg_count = xml.at_css('q msg_count').content
+      token = xml.at_css('q token')
+      @token = token.content if token
+      expire_on = xml.at_css('q expire_on')
+      @expire_on = expire_on.content if expire_on
+      msg_count = xml.at_css('q msg_count')
+      @msg_count = msg_count.content if msg_count
     end
   end
 end

@@ -21,7 +21,7 @@ module Bolide
       q 
     end
   
-    def send_msg(body, qs = "/.*/")
+    def send_msg(body, qs = ".*")
       return false if !qs.kind_of?(String) && !qs.kind_of?(Array)
     
       msg = create_msg(body, qs)
@@ -30,9 +30,11 @@ module Bolide
       if resp.status > 400
         xml = Nokogiri::XML(resp.body)
 
-        @error = xml.at_css('error').content
+        @error = xml.at_css('error')
         if(@error)
-          raise @error
+          raise @error.content
+        else
+          raise resp.body
         end
       end
     end
